@@ -1,0 +1,10 @@
+= Librechat RAG API running with non-root user
+
+This is a simple example of how to run the Librechat RAG API with a non-root user.
+This could be useful for security reasons or to avoid permission issues when running the API in a container or on a server.
+For example you might run a OKD cluster and need a container that runs as a non-root user.
+
+== Original project
+
+The original project is available at https://github.com/danny-avila/rag_api[Librechat RAG API].
+This project uses the base image from the original project and adds a non-root user to run the API
