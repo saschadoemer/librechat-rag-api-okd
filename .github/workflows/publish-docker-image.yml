@@ -21,7 +21,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
+      - name: GitHub Container Registry Login
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Metadata Extraction
         id: meta
         uses: docker/metadata-action@v4
