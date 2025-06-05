@@ -11,7 +11,13 @@ RUN groupadd -r -g ${USER_GID} raguser && useradd -r -u ${USER_UID} -g raguser r
     chown -R raguser:raguser /app && \
     mkdir -p /app/uploads && \
     chown -R raguser:raguser /app/uploads && \
-    chmod 755 /app/uploads
+    chmod 755 /app/uploads && \
+    mkdir -p /app/uploads/public && \
+    chown -R raguser:raguser /app/uploads/public && \
+    chmod 755 /app/uploads/public && \
+    mkdir -p /app/uploads/private && \
+    chown -R raguser:raguser /app/uploads/private && \
+    chmod 755 /app/uploads/private
 
 # Switch to non-root user
 USER raguser
