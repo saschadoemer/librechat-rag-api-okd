@@ -8,16 +8,7 @@ ARG USER_GID=1001
 
 # Create non-root user with configurable UID/GID
 RUN groupadd -r -g ${USER_GID} raguser && useradd -r -u ${USER_UID} -g raguser raguser && \
-    chown -R raguser:raguser /app && \
-    mkdir -p /app/uploads && \
-    chown -R raguser:raguser /app/uploads && \
-    chmod 755 /app/uploads && \
-    mkdir -p /app/uploads/public && \
-    chown -R raguser:raguser /app/uploads/public && \
-    chmod 755 /app/uploads/public && \
-    mkdir -p /app/uploads/private && \
-    chown -R raguser:raguser /app/uploads/private && \
-    chmod 755 /app/uploads/private
+    chown -R raguser:raguser /app
 
 # Switch to non-root user
 USER raguser
