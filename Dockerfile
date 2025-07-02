@@ -8,7 +8,8 @@ ARG USER_GID=1001
 
 # Create non-root user with configurable UID/GID
 RUN groupadd -r -g ${USER_GID} raguser && useradd -r -u ${USER_UID} -g raguser raguser && \
-    chown -R raguser:raguser /app
+    chown -R raguser:raguser /app && \
+    chown -R raguser:raguser /nltk_data
 
 # Switch to non-root user
 USER raguser
